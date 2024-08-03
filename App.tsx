@@ -6,20 +6,25 @@ import {
   Image,
   FlatList,
   ScrollView,
+  useWindowDimensions,
 } from "react-native";
 import { photos } from "./data";
+import Carousel from "./Carousel";
 
 export default function App() {
+  const { height, width } = useWindowDimensions();
+
   return (
     <ScrollView style={styles.container}>
       {/* Header */}
-      <View style={{ height: 400 }}>
+      <View style={{ height: height / 2 }}>
         <FlatList
           data={photos}
           numColumns={5}
           contentContainerStyle={{ gap: 2 }}
           columnWrapperStyle={{ gap: 2 }}
           scrollEnabled={false}
+          inverted
           renderItem={({ item }) => (
             <Image
               source={item.image}
@@ -28,26 +33,10 @@ export default function App() {
           )}
         />
       </View>
-      <View>
-        <Text>Albums</Text>
-        <View
-          style={{ height: 200, width: 300, backgroundColor: "lightgray" }}
-        ></View>
-      </View>
-
-      <View>
-        <Text>Albums</Text>
-        <View
-          style={{ height: 200, width: 300, backgroundColor: "lightgray" }}
-        ></View>
-      </View>
-
-      <View>
-        <Text>Albums</Text>
-        <View
-          style={{ height: 200, width: 300, backgroundColor: "lightgray" }}
-        ></View>
-      </View>
+      {/* Carousel */}
+      <Carousel />
+      <Carousel />
+      <Carousel />
 
       <StatusBar style="auto" />
     </ScrollView>
