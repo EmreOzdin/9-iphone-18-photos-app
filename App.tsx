@@ -34,9 +34,9 @@ export default function App() {
         />
       </View>
       {/* Carousel */}
-      <Carousel />
-      <Carousel />
-      <Carousel />
+      <Carousel title="Albums" photos={photos.slice(0, 6)} />
+      <Carousel title="People" photos={photos.slice(3, 6)} />
+      <Carousel title="Featured" photos={photos.slice(6, 10)} />
 
       <StatusBar style="auto" />
     </ScrollView>
