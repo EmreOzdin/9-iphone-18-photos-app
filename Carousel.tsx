@@ -51,4 +51,4 @@ const styles = StyleSheet.create({
   },
 });
 
-//https://www.youtube.com/watch?v=pZHRFNpYkAY 40:52
+//https://www.youtube.com/watch?v=pZHRFNpYkAY 53:21
